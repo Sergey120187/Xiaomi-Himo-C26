@@ -4,10 +4,24 @@
   box-sizing: border-box;
 }
 
-ul {
-  padding: 0;
+html {
+  scroll-behavior: smooth;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+dl,
+dd {
   margin: 0;
+}
+
+ul {
   list-style: none;
+  padding: 0;
 }
 
 a {
@@ -18,6 +32,11 @@ a {
 
 img {
   display: block;
+}
+
+button {
+  border: none;
+  cursor: pointer;
 }
 
 :root {
@@ -48,6 +67,7 @@ body {
 
 .column {
   max-width: 570px;
+  width: 100%;
 }
 
 .title {
@@ -58,7 +78,7 @@ body {
   text-transform: uppercase;
 }
 
-.btn-order {
+.btn {
   display: inline-block;
   background-color: var(--black);
   text-transform: uppercase;
@@ -70,7 +90,7 @@ body {
   transition: background-color 0.7s;
 }
 
-.btn-order:hover {
+.btn:hover {
   background-color: var(--red);
 }
 
@@ -238,9 +258,224 @@ body {
   justify-content: space-between;
 }
 
+.features__title {
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 2px 0 3px;
+}
 
+.features__item dl {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0 25px;
+}
+
+.features__item:last-child dl {
+  padding-bottom: 0;
+}
+
+.features__item dt,
+.features__item dd {
+  width: 50%;
+  margin-bottom: 5px;
+}
+
+.features__item dt {
+  padding-right: 25px;
+}
 
 .features__img {
+  align-self: center;
+}
+
+/* Gallery */
+
+.gallery {
+  margin-bottom: 50px;
+}
+
+.slider__img {
+  padding-left: 50px;
+}
+
+.slider .slick-dots {
+  top: 0;
+  left: 0;
+}
+
+/* Order` */
+
+.order {
+  margin-bottom: 100px;
+}
+
+.form__wrapper {
+  position: relative;
+}
+
+.form {
+  max-width: 420px;
+}
+
+.form__text {
+  width: 300px;
+  margin-bottom: 30px;
+}
+
+.form__input {
   width: 100%;
-  object-fit: cover;
+  border: none;
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.form__input::placeholder,
+.form__text-radio {
+  line-height: 120%;
+  color: var(--grey);
+  opacity: 0.5;
+}
+
+.form__text-radio {
+  margin-bottom: 10px;
+}
+
+.form__label-box {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.form__label:not(:last-child) {
+  margin-right: 23px;
+}
+
+.form__radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.form__radio:checked + .form__bike {
+  display: block;
+}
+
+.form__bike {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.form__bike-price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  height: 100px;
+  width: 221px;
+  top: 28px;
+  left: -80px;
+  font-size: 32px;
+  line-height: 39px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+}
+
+.form__bike-price::after {
+  position: absolute;
+  content: '';
+  height: 100px;
+  width: 221px;
+  border: 1px solid var(--red);
+  border-radius: 50%;
+  left: -1px;
+  top: 11px;
+}
+
+.form__btn-color {
+  width: 80px;
+  height: 12px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.form__btn-color--grey {
+  background-color: var(--grey);
+}
+
+.form__btn-color--white {
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+}
+
+.form__btn-color--red {
+  background-color: var(--red);
+}
+
+/* Footer */
+
+.footer {
+  background-color: var(--black);
+  font-size: 12px;
+  line-height: 15px;
+  color: var(--white);
+  padding: 25px 0;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__link {
+  display: block;
+  text-decoration: underline;
+}
+
+.footer__socials {
+  display: flex;
+}
+
+.footer__socials-link:not(:last-child) {
+  margin-right: 27px;
+}
+
+.footer__contacts {
+  padding-left: 35px;
+}
+
+.footer__contacts-link {
+  position: relative;
+  display: block;
+}
+
+.footer__contacts-link:not(:last-child) {
+  margin-bottom: 19px;
+}
+
+.footer__contacts-link::before {
+  position: absolute;
+  content: '';
+  width: 24px;
+  height: 24px;
+  left: -34px;
+  top: -4px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
+.footer__contacts-link--phone::before {
+  background-image: url('../images/footer-icon/phone.svg');
+}
+
+.footer__contacts-link--email::before {
+  background-image: url('../images/footer-icon/email.svg');
 }
