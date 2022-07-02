@@ -493,8 +493,8 @@ body {
   }
 
   .btn:hover {
-    color: var(--black);
-    background-color: var(--white);
+    color: var(--white);
+    background-color: var(--black);
   }
 
   .btn {
